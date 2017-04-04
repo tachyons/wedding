@@ -1,0 +1,8 @@
+.terminal-window {
+  width: 600px;
+  height: 500px;
+}
+.terminal-wrapper{
+  background-color: #300a24;
+  /* background-color: transparent; */
+}
