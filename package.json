@@ -1,5 +1,5 @@
 {
-  "name": "vineesh-weds-anjali",
+  "name": "wedding",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Aboobacker MK",
@@ -15,5 +15,8 @@
   "scripts": {
     "build": "webpack",
     "cli": "node index.js"
+  },
+  "bin": {
+    "wedding": "./cli.js"
   }
 }
