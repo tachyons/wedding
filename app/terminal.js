@@ -8,6 +8,8 @@ var groom_text = "Vineesh NP\nSoftware Engineer at TechJini Solutions Pvt. Ltd. 
 
 var wedding_url = "https://www.google.co.in/maps/dir/''/''/data=!4m5!4m4!1m0!1m2!1m1!1s0x3ba414b6d4b9066d:0xab737784febcb1d4?sa=X&ved=0ahUKEwj8qq_sqpTTAhWKqo8KHfxGAAsQ9RcICzAA"
 
+var installation = "-- wedding@1.0.0 \r\n  +-- bootstrap@3.3.7 \r\n  +-- commander@2.9.0 \r\n  | `-- graceful-readlink@1.0.1 \r\n  +-- jquery@3.2.1 \r\n  +-- jquery.terminal@1.1.0 \r\n  | `-- jquery@2.2.4 \r\n  +-- opn@4.0.2 \r\n  | +-- object-assign@4.1.1 \r\n  | `-- pinkie-promise@2.0.1 \r\n  |   `-- pinkie@2.0.4 "
+
 var ul;
 var cmd;
 var empty = {
@@ -26,50 +28,60 @@ var commands = {
 
 $( document ).ready(function() {
   $('#terminal-content').terminal(function(command, term) {
-    try {
-      option = command.trim().match(/\S+/g)[1];
-    } catch (exception) {
-      option = "unknown"
+    if(command == "npm install wedding") {
+      this.echo(installation);
+    } else {
+      try {
+        option = command.trim().match(/\S+/g)[1];
+      } catch (exception) {
+        option = "unknown"
+      }
+      switch (option) {
+        case '-V':
+        case '--version':
+          this.echo("0.0.1")
+          break;
+        case '-h':
+        case '--help':
+          this.echo(help_text);
+          break;
+        case '-l':
+        case '--location':
+          this.echo(location_text);
+          term.push(function(command, term) {
+            if (/y(es){0,1}/.test(command)) {
+              window.open(wedding_url, '_blank');
+            }
+          term.pop();
+        }, {
+          prompt: 'Do you want to open this link in the browser? (yes/no) ',
+          greetings: null
+        });
+
+          break;
+
+        case '-b':
+        case '--bride':
+          this.echo(bride_text)
+          break;
+
+        case '-g':
+        case '--groom':
+          this.echo(groom_text)
+          break;
+
+        default:
+          this.echo("Sorry, system could not recognize the command you entered \n \n");
+          this.echo(help_text);
+      }
     }
-    switch (option) {
-      case '-V':
-      case '--version':
-        this.echo("0.0.1")
-        break;
-      case '-h':
-      case '--help':
-        this.echo(help_text);
-        break;
-      case '-l':
-      case '--location':
-        this.echo(location_text);
-        term.push(function(command, term) {
-          if (/y(es){0,1}/.test(command)) {
-            window.open(wedding_url, '_blank');
-          }
-        term.pop();
-      }, {
-        prompt: 'Do you want to open this link in the browser? (yes/no) ',
-        greetings: null
-      });
-
-        break;
-
-      case '-b':
-      case '--bride':
-        this.echo(bride_text)
-        break;
-
-      case '-g':
-      case '--groom':
-        this.echo(groom_text)
-        break;
-
-      default:
-        this.echo("Sorry, system could not recognize the command you entered \n \n");
-        this.echo(help_text);
-    }
-  }, { prompt: 'guest@marriage ~$ ',
+  }, { 
+    prompt: 'guest@marriage ~$ ', 
     name: 'vineesh_weds_anjali',
-    greetings: greeting_text });
+    greetings: greeting_text,
+    onInit: function(term) {
+      term.insert("npm install wedding");
+      term.history().clear();
+    },
+  });
 });
