@@ -1,7 +1,13 @@
 .terminal-window {
+  margin: 5 0 5 0;
   width: 98%;
   height: 75%;
 }
+#terminal-content{
+ max-height: calc(100vh - 100px) !important;
+ overflow-y: auto !important;
+}
+
 .terminal-wrapper{
   background-color: #300a24;
   /* background-color: #004D40; */
