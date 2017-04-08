@@ -4,8 +4,8 @@
  */
 
 body {
-  background-color: black;
-  background: url(../img/background.jpg) no-repeat center center fixed;
+  background-color: transparent;
+  /*background: url(../img/background.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,7 +25,7 @@ body {
 
 *{
   cursor: default;
-  font-family:"Ubuntu","Ubuntu Beta",Ubuntu, UbuntuBeta;
+  font-family:"Courier New"
 }
 
 a {

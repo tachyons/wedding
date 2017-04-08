@@ -26,7 +26,7 @@ $( document ).ready(function() {
     } else {
       this.echo('unknown command');
     }
-  }, { prompt: 'guest@marriage ~$', 
+  }, { prompt: 'guest@marriage ~$ ', 
     name: 'vineesh_weds_anjali',
     greetings: greeting_text });
 });
