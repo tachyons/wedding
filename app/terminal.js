@@ -8,7 +8,7 @@ var groom_text = "Vineesh NP\nSoftware Engineer at TechJini Solutions Pvt. Ltd. 
 
 var wedding_url = "https://www.google.co.in/maps/dir/''/''/data=!4m5!4m4!1m0!1m2!1m1!1s0x3ba414b6d4b9066d:0xab737784febcb1d4?sa=X&ved=0ahUKEwj8qq_sqpTTAhWKqo8KHfxGAAsQ9RcICzAA"
 
-var installation = "-- wedding@1.0.0 \r\n  +-- bootstrap@3.3.7 \r\n  +-- commander@2.9.0 \r\n  | `-- graceful-readlink@1.0.1 \r\n  +-- jquery@3.2.1 \r\n  +-- jquery.terminal@1.1.0 \r\n  | `-- jquery@2.2.4 \r\n  +-- opn@4.0.2 \r\n  | +-- object-assign@4.1.1 \r\n  | `-- pinkie-promise@2.0.1 \r\n  |   `-- pinkie@2.0.4 "
+var installation = "-- wedding@1.0.0 \r\n  +-- bootstrap@3.3.7 \r\n  +-- commander@2.9.0 \r\n  | `-- graceful-readlink@1.0.1 \r\n  +-- jquery@3.2.1 \r\n  +-- jquery.terminal@1.1.0 \r\n  | `-- jquery@2.2.4 \r\n  +-- opn@4.0.2 \r\n  | +-- object-assign@4.1.1 \r\n  | `-- pinkie-promise@2.0.1 \r\n  |   `-- pinkie@2.0.4  \n  Successfully installed wedding. Now enter wedding -h to get more details"
 
 var ul;
 var cmd;
