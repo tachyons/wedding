@@ -7,3 +7,16 @@
   background-color: #004D40;
   /* background-color: transparent; */
 }
+
+.terminal-output>div {
+    min-height: 20px;
+}
+.cmd,.cmd .prompt,.terminal,.terminal .terminal-output div div {
+        /* font-size: calc(var(--size, 1) * 12px); */
+        /* line-height: calc(var(--size, 1) * 14px); */
+   font-size: 16px;
+}
+.cmd,.terminal {
+  color: var(--color,#aaa);
+  background-color: var(--background,#300a24)
+}
