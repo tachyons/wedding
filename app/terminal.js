@@ -83,5 +83,9 @@ $( document ).ready(function() {
       term.insert("npm install wedding");
       term.history().clear();
     },
+    completion: function(string, callback) {
+      callback(['npm install wedding', 'wedding --location', 'wedding --help', 'wedding --groom', 'wedding --date', 'wedding --bride']);
+    },
+    tabcompletion: true
   });
 });
